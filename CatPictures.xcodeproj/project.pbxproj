@@ -1,0 +1,690 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3E2911FAFADFB9835ED46707 /* Pods_CatPicturesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FEF5C66043532B198806EE3 /* Pods_CatPicturesTests.framework */; };
+		A2931E6A6175067BA360866A /* Pods_CatPictures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E93C3C7B624D915964A848 /* Pods_CatPictures.framework */; };
+		FD5930BF24C8610300C3D01E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5930BE24C8610300C3D01E /* AppDelegate.swift */; };
+		FD5930C124C8610300C3D01E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5930C024C8610300C3D01E /* SceneDelegate.swift */; };
+		FD5930C324C8610300C3D01E /* CatPicturesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5930C224C8610300C3D01E /* CatPicturesController.swift */; };
+		FD5930C524C8610300C3D01E /* SavedPicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5930C424C8610300C3D01E /* SavedPicturesViewController.swift */; };
+		FD5930C824C8610300C3D01E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5930C624C8610300C3D01E /* Main.storyboard */; };
+		FD5930CA24C8610400C3D01E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD5930C924C8610400C3D01E /* Assets.xcassets */; };
+		FD5930CD24C8610400C3D01E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5930CB24C8610400C3D01E /* LaunchScreen.storyboard */; };
+		FD5930D824C8610400C3D01E /* CatPicturesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5930D724C8610400C3D01E /* CatPicturesTests.swift */; };
+		FD5930E324C8623300C3D01E /* ApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5930E224C8623300C3D01E /* ApiHelper.swift */; };
+		FD5930E624C88D5A00C3D01E /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FD5930E424C88D5A00C3D01E /* Model.xcdatamodeld */; };
+		FD5930E824C88EF500C3D01E /* CatPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5930E724C88EF500C3D01E /* CatPicture.swift */; };
+		FD5930EC24C8904000C3D01E /* DynamicValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5930EB24C8904000C3D01E /* DynamicValue.swift */; };
+		FD5930EE24C8906F00C3D01E /* GenericDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5930ED24C8906F00C3D01E /* GenericDataSource.swift */; };
+		FD5930F024C890DE00C3D01E /* CatPicturesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5930EF24C890DE00C3D01E /* CatPicturesViewModel.swift */; };
+		FD5930F224C8914700C3D01E /* CatPicturesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5930F124C8914700C3D01E /* CatPicturesDataSource.swift */; };
+		FD5930F424C892AD00C3D01E /* CatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5930F324C892AD00C3D01E /* CatCell.swift */; };
+		FD5930F624C8959C00C3D01E /* CatPicturesController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5930F524C8959C00C3D01E /* CatPicturesController+Utils.swift */; };
+		FD5930F924C9D26B00C3D01E /* FavouriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5930F824C9D26B00C3D01E /* FavouriteButton.swift */; };
+		FD5930FC24C9D5C200C3D01E /* CatPic+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5930FA24C9D5C200C3D01E /* CatPic+CoreDataClass.swift */; };
+		FD5930FD24C9D5C200C3D01E /* CatPic+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5930FB24C9D5C200C3D01E /* CatPic+CoreDataProperties.swift */; };
+		FD5930FF24C9D5F600C3D01E /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5930FE24C9D5F600C3D01E /* CoreDataHelper.swift */; };
+		FD59310124C9FFD200C3D01E /* CatCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD59310024C9FFD200C3D01E /* CatCellViewModel.swift */; };
+		FD5E754A24CB15F7000B962A /* SavedPicturesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5E754924CB15F7000B962A /* SavedPicturesViewModel.swift */; };
+		FD5E754C24CB1B0C000B962A /* SavedCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5E754B24CB1B0C000B962A /* SavedCellViewModel.swift */; };
+		FD5E754E24CB1BAC000B962A /* SavedCatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5E754D24CB1BAC000B962A /* SavedCatCell.swift */; };
+		FDFC789524CDD9A10058BD79 /* ImageCacheHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFC789424CDD9A10058BD79 /* ImageCacheHelper.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FD5930D424C8610400C3D01E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD5930B324C8610300C3D01E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD5930BA24C8610300C3D01E;
+			remoteInfo = CatPictures;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2EB36582BE8B8144E6FF7064 /* Pods-CatPicturesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatPicturesTests.release.xcconfig"; path = "Target Support Files/Pods-CatPicturesTests/Pods-CatPicturesTests.release.xcconfig"; sourceTree = "<group>"; };
+		35E93C3C7B624D915964A848 /* Pods_CatPictures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CatPictures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43F4EF114C1D932D2871363D /* Pods-CatPicturesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatPicturesTests.debug.xcconfig"; path = "Target Support Files/Pods-CatPicturesTests/Pods-CatPicturesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9FEF5C66043532B198806EE3 /* Pods_CatPicturesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CatPicturesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A06D30673E6BA21BC552286B /* Pods-CatPictures.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatPictures.release.xcconfig"; path = "Target Support Files/Pods-CatPictures/Pods-CatPictures.release.xcconfig"; sourceTree = "<group>"; };
+		DD7DADDF8723BD50DAFFEE7D /* Pods-CatPictures.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatPictures.debug.xcconfig"; path = "Target Support Files/Pods-CatPictures/Pods-CatPictures.debug.xcconfig"; sourceTree = "<group>"; };
+		FD5930BB24C8610300C3D01E /* CatPictures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatPictures.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD5930BE24C8610300C3D01E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FD5930C024C8610300C3D01E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FD5930C224C8610300C3D01E /* CatPicturesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatPicturesController.swift; sourceTree = "<group>"; };
+		FD5930C424C8610300C3D01E /* SavedPicturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPicturesViewController.swift; sourceTree = "<group>"; };
+		FD5930C724C8610300C3D01E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FD5930C924C8610400C3D01E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FD5930CC24C8610400C3D01E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FD5930CE24C8610400C3D01E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD5930D324C8610400C3D01E /* CatPicturesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatPicturesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD5930D724C8610400C3D01E /* CatPicturesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatPicturesTests.swift; sourceTree = "<group>"; };
+		FD5930D924C8610400C3D01E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD5930E224C8623300C3D01E /* ApiHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHelper.swift; sourceTree = "<group>"; };
+		FD5930E524C88D5A00C3D01E /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		FD5930E724C88EF500C3D01E /* CatPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatPicture.swift; sourceTree = "<group>"; };
+		FD5930EB24C8904000C3D01E /* DynamicValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicValue.swift; sourceTree = "<group>"; };
+		FD5930ED24C8906F00C3D01E /* GenericDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericDataSource.swift; sourceTree = "<group>"; };
+		FD5930EF24C890DE00C3D01E /* CatPicturesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatPicturesViewModel.swift; sourceTree = "<group>"; };
+		FD5930F124C8914700C3D01E /* CatPicturesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatPicturesDataSource.swift; sourceTree = "<group>"; };
+		FD5930F324C892AD00C3D01E /* CatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatCell.swift; sourceTree = "<group>"; };
+		FD5930F524C8959C00C3D01E /* CatPicturesController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CatPicturesController+Utils.swift"; sourceTree = "<group>"; };
+		FD5930F824C9D26B00C3D01E /* FavouriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteButton.swift; sourceTree = "<group>"; };
+		FD5930FA24C9D5C200C3D01E /* CatPic+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CatPic+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		FD5930FB24C9D5C200C3D01E /* CatPic+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CatPic+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		FD5930FE24C9D5F600C3D01E /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		FD59310024C9FFD200C3D01E /* CatCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatCellViewModel.swift; sourceTree = "<group>"; };
+		FD5E754924CB15F7000B962A /* SavedPicturesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPicturesViewModel.swift; sourceTree = "<group>"; };
+		FD5E754B24CB1B0C000B962A /* SavedCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCellViewModel.swift; sourceTree = "<group>"; };
+		FD5E754D24CB1BAC000B962A /* SavedCatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCatCell.swift; sourceTree = "<group>"; };
+		FDFC789424CDD9A10058BD79 /* ImageCacheHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheHelper.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FD5930B824C8610300C3D01E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2931E6A6175067BA360866A /* Pods_CatPictures.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD5930D024C8610400C3D01E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E2911FAFADFB9835ED46707 /* Pods_CatPicturesTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4E026465D4109CC0F0642201 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DD7DADDF8723BD50DAFFEE7D /* Pods-CatPictures.debug.xcconfig */,
+				A06D30673E6BA21BC552286B /* Pods-CatPictures.release.xcconfig */,
+				43F4EF114C1D932D2871363D /* Pods-CatPicturesTests.debug.xcconfig */,
+				2EB36582BE8B8144E6FF7064 /* Pods-CatPicturesTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B2520D83CF6B610A8C5FCEB8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				35E93C3C7B624D915964A848 /* Pods_CatPictures.framework */,
+				9FEF5C66043532B198806EE3 /* Pods_CatPicturesTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FD5930B224C8610300C3D01E = {
+			isa = PBXGroup;
+			children = (
+				FD5930BD24C8610300C3D01E /* CatPictures */,
+				FD5930D624C8610400C3D01E /* CatPicturesTests */,
+				FD5930BC24C8610300C3D01E /* Products */,
+				4E026465D4109CC0F0642201 /* Pods */,
+				B2520D83CF6B610A8C5FCEB8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FD5930BC24C8610300C3D01E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FD5930BB24C8610300C3D01E /* CatPictures.app */,
+				FD5930D324C8610400C3D01E /* CatPicturesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FD5930BD24C8610300C3D01E /* CatPictures */ = {
+			isa = PBXGroup;
+			children = (
+				FD5930BE24C8610300C3D01E /* AppDelegate.swift */,
+				FD5930C024C8610300C3D01E /* SceneDelegate.swift */,
+				FD5930F724C8961000C3D01E /* ViewModel */,
+				FD5930E924C88F5100C3D01E /* Model */,
+				FD5930EA24C88F9800C3D01E /* Views */,
+				FD5930C624C8610300C3D01E /* Main.storyboard */,
+				FD5930C924C8610400C3D01E /* Assets.xcassets */,
+				FD5930CB24C8610400C3D01E /* LaunchScreen.storyboard */,
+				FD5930CE24C8610400C3D01E /* Info.plist */,
+				FD5930E224C8623300C3D01E /* ApiHelper.swift */,
+				FDFC789424CDD9A10058BD79 /* ImageCacheHelper.swift */,
+				FD5930FE24C9D5F600C3D01E /* CoreDataHelper.swift */,
+				FD5930E424C88D5A00C3D01E /* Model.xcdatamodeld */,
+			);
+			path = CatPictures;
+			sourceTree = "<group>";
+		};
+		FD5930D624C8610400C3D01E /* CatPicturesTests */ = {
+			isa = PBXGroup;
+			children = (
+				FD5930D724C8610400C3D01E /* CatPicturesTests.swift */,
+				FD5930D924C8610400C3D01E /* Info.plist */,
+			);
+			path = CatPicturesTests;
+			sourceTree = "<group>";
+		};
+		FD5930E924C88F5100C3D01E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FD5930EB24C8904000C3D01E /* DynamicValue.swift */,
+				FD5930ED24C8906F00C3D01E /* GenericDataSource.swift */,
+				FD5930F124C8914700C3D01E /* CatPicturesDataSource.swift */,
+				FD5930FA24C9D5C200C3D01E /* CatPic+CoreDataClass.swift */,
+				FD5930FB24C9D5C200C3D01E /* CatPic+CoreDataProperties.swift */,
+				FD5930E724C88EF500C3D01E /* CatPicture.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FD5930EA24C88F9800C3D01E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FD5930F524C8959C00C3D01E /* CatPicturesController+Utils.swift */,
+				FD5930C424C8610300C3D01E /* SavedPicturesViewController.swift */,
+				FD5930F324C892AD00C3D01E /* CatCell.swift */,
+				FD5E754D24CB1BAC000B962A /* SavedCatCell.swift */,
+				FD5930F824C9D26B00C3D01E /* FavouriteButton.swift */,
+				FD5930C224C8610300C3D01E /* CatPicturesController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FD5930F724C8961000C3D01E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FD5930EF24C890DE00C3D01E /* CatPicturesViewModel.swift */,
+				FD59310024C9FFD200C3D01E /* CatCellViewModel.swift */,
+				FD5E754924CB15F7000B962A /* SavedPicturesViewModel.swift */,
+				FD5E754B24CB1B0C000B962A /* SavedCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FD5930BA24C8610300C3D01E /* CatPictures */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD5930DC24C8610400C3D01E /* Build configuration list for PBXNativeTarget "CatPictures" */;
+			buildPhases = (
+				704F8FD0F381C085AA548857 /* [CP] Check Pods Manifest.lock */,
+				FD5930B724C8610300C3D01E /* Sources */,
+				FD5930B824C8610300C3D01E /* Frameworks */,
+				FD5930B924C8610300C3D01E /* Resources */,
+				4BACB0C7B229EB9328338FF6 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CatPictures;
+			productName = CatPictures;
+			productReference = FD5930BB24C8610300C3D01E /* CatPictures.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FD5930D224C8610400C3D01E /* CatPicturesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD5930DF24C8610400C3D01E /* Build configuration list for PBXNativeTarget "CatPicturesTests" */;
+			buildPhases = (
+				742E9BFBB55A0E598EC76188 /* [CP] Check Pods Manifest.lock */,
+				FD5930CF24C8610400C3D01E /* Sources */,
+				FD5930D024C8610400C3D01E /* Frameworks */,
+				FD5930D124C8610400C3D01E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD5930D524C8610400C3D01E /* PBXTargetDependency */,
+			);
+			name = CatPicturesTests;
+			productName = CatPicturesTests;
+			productReference = FD5930D324C8610400C3D01E /* CatPicturesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FD5930B324C8610300C3D01E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Nadzeya Karaban";
+				TargetAttributes = {
+					FD5930BA24C8610300C3D01E = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					FD5930D224C8610400C3D01E = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = FD5930BA24C8610300C3D01E;
+					};
+				};
+			};
+			buildConfigurationList = FD5930B624C8610300C3D01E /* Build configuration list for PBXProject "CatPictures" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FD5930B224C8610300C3D01E;
+			productRefGroup = FD5930BC24C8610300C3D01E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FD5930BA24C8610300C3D01E /* CatPictures */,
+				FD5930D224C8610400C3D01E /* CatPicturesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FD5930B924C8610300C3D01E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD5930CD24C8610400C3D01E /* LaunchScreen.storyboard in Resources */,
+				FD5930CA24C8610400C3D01E /* Assets.xcassets in Resources */,
+				FD5930C824C8610300C3D01E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD5930D124C8610400C3D01E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4BACB0C7B229EB9328338FF6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CatPictures/Pods-CatPictures-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CatPictures/Pods-CatPictures-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CatPictures/Pods-CatPictures-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		704F8FD0F381C085AA548857 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CatPictures-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		742E9BFBB55A0E598EC76188 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CatPicturesTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FD5930B724C8610300C3D01E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD5930F624C8959C00C3D01E /* CatPicturesController+Utils.swift in Sources */,
+				FD5930F424C892AD00C3D01E /* CatCell.swift in Sources */,
+				FD5E754A24CB15F7000B962A /* SavedPicturesViewModel.swift in Sources */,
+				FD5930E824C88EF500C3D01E /* CatPicture.swift in Sources */,
+				FD5930C524C8610300C3D01E /* SavedPicturesViewController.swift in Sources */,
+				FD5E754E24CB1BAC000B962A /* SavedCatCell.swift in Sources */,
+				FD5930FF24C9D5F600C3D01E /* CoreDataHelper.swift in Sources */,
+				FD5930F224C8914700C3D01E /* CatPicturesDataSource.swift in Sources */,
+				FD5930C324C8610300C3D01E /* CatPicturesController.swift in Sources */,
+				FD5930BF24C8610300C3D01E /* AppDelegate.swift in Sources */,
+				FDFC789524CDD9A10058BD79 /* ImageCacheHelper.swift in Sources */,
+				FD5930C124C8610300C3D01E /* SceneDelegate.swift in Sources */,
+				FD5930E324C8623300C3D01E /* ApiHelper.swift in Sources */,
+				FD5E754C24CB1B0C000B962A /* SavedCellViewModel.swift in Sources */,
+				FD5930FD24C9D5C200C3D01E /* CatPic+CoreDataProperties.swift in Sources */,
+				FD5930FC24C9D5C200C3D01E /* CatPic+CoreDataClass.swift in Sources */,
+				FD5930F924C9D26B00C3D01E /* FavouriteButton.swift in Sources */,
+				FD5930E624C88D5A00C3D01E /* Model.xcdatamodeld in Sources */,
+				FD5930EC24C8904000C3D01E /* DynamicValue.swift in Sources */,
+				FD59310124C9FFD200C3D01E /* CatCellViewModel.swift in Sources */,
+				FD5930F024C890DE00C3D01E /* CatPicturesViewModel.swift in Sources */,
+				FD5930EE24C8906F00C3D01E /* GenericDataSource.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD5930CF24C8610400C3D01E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD5930D824C8610400C3D01E /* CatPicturesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FD5930D524C8610400C3D01E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD5930BA24C8610300C3D01E /* CatPictures */;
+			targetProxy = FD5930D424C8610400C3D01E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FD5930C624C8610300C3D01E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD5930C724C8610300C3D01E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FD5930CB24C8610400C3D01E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD5930CC24C8610400C3D01E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FD5930DA24C8610400C3D01E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FD5930DB24C8610400C3D01E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FD5930DD24C8610400C3D01E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD7DADDF8723BD50DAFFEE7D /* Pods-CatPictures.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QQP6RH2SQ3;
+				INFOPLIST_FILE = CatPictures/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.foxandowl.notes.CatPictures;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FD5930DE24C8610400C3D01E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A06D30673E6BA21BC552286B /* Pods-CatPictures.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QQP6RH2SQ3;
+				INFOPLIST_FILE = CatPictures/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.foxandowl.notes.CatPictures;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FD5930E024C8610400C3D01E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43F4EF114C1D932D2871363D /* Pods-CatPicturesTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QQP6RH2SQ3;
+				INFOPLIST_FILE = CatPicturesTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.foxandowl.notes.CatPicturesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CatPictures.app/CatPictures";
+			};
+			name = Debug;
+		};
+		FD5930E124C8610400C3D01E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EB36582BE8B8144E6FF7064 /* Pods-CatPicturesTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QQP6RH2SQ3;
+				INFOPLIST_FILE = CatPicturesTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.foxandowl.notes.CatPicturesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CatPictures.app/CatPictures";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FD5930B624C8610300C3D01E /* Build configuration list for PBXProject "CatPictures" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD5930DA24C8610400C3D01E /* Debug */,
+				FD5930DB24C8610400C3D01E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD5930DC24C8610400C3D01E /* Build configuration list for PBXNativeTarget "CatPictures" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD5930DD24C8610400C3D01E /* Debug */,
+				FD5930DE24C8610400C3D01E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD5930DF24C8610400C3D01E /* Build configuration list for PBXNativeTarget "CatPicturesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD5930E024C8610400C3D01E /* Debug */,
+				FD5930E124C8610400C3D01E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FD5930E424C88D5A00C3D01E /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FD5930E524C88D5A00C3D01E /* Model.xcdatamodel */,
+			);
+			currentVersion = FD5930E524C88D5A00C3D01E /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FD5930B324C8610300C3D01E /* Project object */;
+}

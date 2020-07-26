@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Random Cats-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <viewController id="9pv-A4-QxB" customClass="CatPicturesController" customModule="CatPictures" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="H42-fU-ScE">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="qyH-GB-Lo2">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="catCell" id="DJC-6p-cNu" customClass="CatCell" customModule="CatPictures" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="190" height="220"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="A82-Vr-XK6">
+                                            <rect key="frame" x="0.0" y="0.0" width="190" height="220"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eVT-zv-eKZ">
+                                                    <rect key="frame" x="20" y="20" width="150" height="138"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="jZU-y7-a0u">
+                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="116"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5uC-G1-0zT" customClass="FavouriteButton" customModule="CatPictures" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="116" width="150" height="22"/>
+                                                            <state key="normal" image="heart" catalog="system"/>
+                                                        </button>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="5uC-G1-0zT" firstAttribute="width" secondItem="jZU-y7-a0u" secondAttribute="height" multiplier="75:58" id="ftA-xN-CPV"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="eVT-zv-eKZ" firstAttribute="leading" secondItem="A82-Vr-XK6" secondAttribute="leading" constant="20" id="iCG-if-2Hl"/>
+                                                <constraint firstItem="eVT-zv-eKZ" firstAttribute="top" secondItem="A82-Vr-XK6" secondAttribute="top" constant="20" id="qed-GF-9WZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="eVT-zv-eKZ" secondAttribute="trailing" constant="20" id="r0k-b6-SpA"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="190" height="220"/>
+                                        <connections>
+                                            <outlet property="favButton" destination="5uC-G1-0zT" id="jKl-iN-SRN"/>
+                                            <outlet property="iconImageView" destination="jZU-y7-a0u" id="cqK-sC-OUD"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="H42-fU-ScE" secondAttribute="trailing" id="Jwq-3q-t83"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="H42-fU-ScE" secondAttribute="bottom" id="Ua3-7G-SqA"/>
+                            <constraint firstItem="H42-fU-ScE" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="c5x-nb-fN2"/>
+                            <constraint firstItem="H42-fU-ScE" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="v3w-KE-3hT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Random Cats" image="camera" catalog="system" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="picturesCollection" destination="H42-fU-ScE" id="zWo-zJ-cat"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="-320"/>
+        </scene>
+        <!--Favoutite Cats-->
+        <scene sceneID="wg7-f3-ORb">
+            <objects>
+                <viewController id="8rJ-Kc-sve" customClass="SavedPicturesViewController" customModule="CatPictures" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="X6z-Sm-tHU">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="gMR-Vz-oO1">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="savedCatCell" id="uhE-A4-m5V" customClass="SavedCatCell" customModule="CatPictures" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="190" height="220"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bPX-4i-iKl">
+                                            <rect key="frame" x="0.0" y="0.0" width="190" height="220"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="35Q-Aa-rei">
+                                                    <rect key="frame" x="20" y="20" width="150" height="150"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Ozo-yz-Pwc">
+                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Shf-A0-yhO" customClass="FavouriteButton" customModule="CatPictures" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="128" width="150" height="22"/>
+                                                            <state key="normal" image="heart.fill" catalog="system"/>
+                                                        </button>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="Shf-A0-yhO" firstAttribute="width" secondItem="Ozo-yz-Pwc" secondAttribute="height" multiplier="75:64" id="8ro-JY-Pkc"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="35Q-Aa-rei" secondAttribute="trailing" constant="20" id="Guf-OV-FCW"/>
+                                                <constraint firstItem="35Q-Aa-rei" firstAttribute="leading" secondItem="bPX-4i-iKl" secondAttribute="leading" constant="20" id="RaV-OG-OkK"/>
+                                                <constraint firstItem="35Q-Aa-rei" firstAttribute="top" secondItem="bPX-4i-iKl" secondAttribute="top" constant="20" id="csw-Bu-nWU"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="190" height="220"/>
+                                        <connections>
+                                            <outlet property="favButton" destination="Shf-A0-yhO" id="UUd-kz-IRj"/>
+                                            <outlet property="iconImageView" destination="Ozo-yz-Pwc" id="q2O-GB-LUg"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="X6z-Sm-tHU" firstAttribute="bottom" secondItem="O1u-W8-tvY" secondAttribute="bottom" id="97z-bu-6NA"/>
+                            <constraint firstAttribute="trailing" secondItem="X6z-Sm-tHU" secondAttribute="trailing" id="LTb-Uc-6Qw"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="X6z-Sm-tHU" secondAttribute="trailing" id="POk-kS-BKV"/>
+                            <constraint firstItem="X6z-Sm-tHU" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="Qzh-SL-kFh"/>
+                            <constraint firstItem="X6z-Sm-tHU" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="TNJ-t6-Qyc"/>
+                            <constraint firstItem="X6z-Sm-tHU" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="kfF-xg-kAt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Favoutite Cats" image="heart" catalog="system" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="savedPicsCollection" destination="X6z-Sm-tHU" id="baV-gS-EXM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="360"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="camera" catalog="system" width="128" height="96"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+    </resources>
+</document>
