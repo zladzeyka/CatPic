@@ -30,24 +30,22 @@ class SavedPicturesViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         viewModel.loadSavedPictures()
     }
 }
 
 extension SavedPicturesViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
     // MARK: - UICollectionViewDataSource
 
-    public func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return viewModel.numberOfSections
-    }
-
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.rowsPerSection
+        return viewModel.dataSource.data.value.count
     }
 
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellIdentifier, for: indexPath) as? SavedCatCell {
-            cell.viewModel = viewModel.viewModelForCell(at: indexPath.row)
+            cell.viewModel = viewModel.dataSource.data.value[indexPath.row]
             return cell
         } else {
             return UICollectionViewCell()

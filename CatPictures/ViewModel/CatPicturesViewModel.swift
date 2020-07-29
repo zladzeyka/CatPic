@@ -10,29 +10,48 @@ import Foundation
 class CatPicturesViewModel {
 
     var onErrorHandling: ((String?) -> Void)?
-
-    var dataSource = CatPicturesDataSource()
     
-    var numberOfSections: Int = 1
-    var rowsPerSection: Int = 0
-
-
+    var pictures: [CatPicture] = []
+    private(set) var dataSource = GenericDataSource<CatCellViewModel>()
+    
     func loadRandomPictures() {
         ApiHelper.shared.onErrorHandling = { error in
             self.onErrorHandling!(error?.errorDescription)
         }
-        ApiHelper.shared.requestPictures { (pics: [CatPicture]) in
+        ApiHelper.shared.requestPictures { [weak self] (pics: [CatPicture]) in
             if !pics.isEmpty {
-                self.dataSource.data.value = pics
-                self.rowsPerSection = pics.count
+                self?.pictures = pics
+                self?.reloadCachedPictures()
             }
         }
     }
     
-    func viewModelForCell(at index: Int) -> CatCellViewModel {
-        let pic = dataSource.data.value[index]
-        return CatCellViewModel(picture: pic)
+    func reloadCachedPictures() {
+        let pics = self.pictures
+        DispatchQueue.global().async { [weak self] in
+            let models: [CatCellViewModel] = pics.map { pic in
+                let vm = CatCellViewModel(picture: pic, isFavourite: CoreDataHelper.shared.wasSaved(pic: pic))
+                
+                vm.onFavouriteHandling = { [weak vm] in
+                    guard let vm = vm else { return }
+                    if (vm.isFavourite) {
+                        CoreDataHelper.shared.deletePicture(picture: pic)
+                        vm.isFavourite = false
+                        ImageCacheHelper.shared.removeFromCache(pic: pic)
+                    } else {
+                        CoreDataHelper.shared.savePicture(picture: pic)
+                        vm.isFavourite = true
+                        ImageCacheHelper.shared.saveToCache(pic: pic)
+                    }
+                }
+                return vm
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                if !pics.isEmpty {
+                    self?.dataSource.data.value = models
+                }
+            }
+        }
     }
-    
-
 }

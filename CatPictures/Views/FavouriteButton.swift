@@ -14,19 +14,20 @@ class FavouriteButton: UIButton {
         case save
         case saved
     }
+
     enum Constants {
         static let saveImage = "heart"
         static let deleteImage = "heart.fill"
     }
 
-    var buttonState : ButtonState = .save  {
+    var buttonState: ButtonState = .save {
         didSet {
-             let buttonImage = (buttonState == .save) ? SaveButtonImages.save.saveImage : SaveButtonImages.delete.saveImage
+            let buttonImage = (buttonState == .save) ? SaveButtonImages.save.saveImage : SaveButtonImages.delete.saveImage
             setImage(buttonImage, for: .normal)
             setImage(buttonImage, for: .highlighted)
-            
         }
     }
+
     var action: () -> () = {}
     enum SaveButtonImages {
         case save
@@ -50,12 +51,7 @@ class FavouriteButton: UIButton {
     }
 
     @objc func saveButtonTapped() {
-        print(buttonState)
         action()
-
         buttonState = (buttonState == .save) ? .saved : .save
- print(buttonState)
-
-        
     }
 }

@@ -8,28 +8,33 @@
 
 import Foundation
 class SavedPicturesViewModel {
-    var dataSource = CatPicturesDataSource()
-
-    var numberOfSections: Int = 1
-    var rowsPerSection: Int = 0
-   // var onDeleteCompletion
+    private(set) var dataSource = GenericDataSource<SavedCellViewModel>()
+    var pictures: [CatPicture] = []
 
     func loadSavedPictures() {
-        dataSource.data.value = CoreDataHelper.shared.retrieveSavedPictures()
-        rowsPerSection = dataSource.data.value.count
-    }
+        DispatchQueue.global().async { [weak self] in
 
-    func viewModelForCell(at index: Int) -> SavedCellViewModel {
-        let pic = dataSource.data.value[index]
-        let onDelete = {
-            self.remove(pic: pic)
-            CoreDataHelper.shared.deletePicture(picture: pic)
-           // ImageCacheHelper.shared.removeCachedImage(identifier: pic.id)
-            let rowCount = self.dataSource.data.value.count
-            self.rowsPerSection = rowCount
+            CoreDataHelper.shared.retrieveSavedPictures { [weak self] result in
+                switch result {
+                case .success(let pics):
+                    self?.pictures = pics
+                    let models: [SavedCellViewModel] = pics.map { pic in
+                        let vm = SavedCellViewModel(picture: pic) {
+                            self?.remove(pic: pic)
+                            CoreDataHelper.shared.deletePicture(picture: pic)
+                            ImageCacheHelper.shared.removeFromCache(pic: pic)
+                        }
+                        return vm
+                    }
+                    DispatchQueue.main.async { [weak self] in
+                        self?.dataSource.data.value = models
+                    }
 
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
         }
-        return SavedCellViewModel(picture: pic, action : onDelete)
     }
 
     func remove(pic: CatPicture) {

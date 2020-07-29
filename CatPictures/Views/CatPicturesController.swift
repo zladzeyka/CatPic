@@ -26,39 +26,33 @@ class CatPicturesController: UIViewController {
 
         viewModel.dataSource.data.addAndNotify(observer: self) { [weak self] _ in
             DispatchQueue.main.async {
-
-            self?.picturesCollection.reloadData()
+                self?.picturesCollection.reloadData()
             }
         }
 
         viewModel.onErrorHandling = { [weak self] error in
             self?.showError(Constants.errorTitle, message: error ?? Constants.errorMessage)
         }
-        
         viewModel.loadRandomPictures()
-
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        viewModel.reloadCachedPictures()
     }
 }
 
 extension CatPicturesController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     // MARK: - UICollectionViewDataSource
 
-    public func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return viewModel.numberOfSections
-    }
-
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.rowsPerSection
+        return viewModel.dataSource.data.value.count
     }
 
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellIdentifier, for: indexPath) as? CatCell {
-            cell.viewModel = viewModel.viewModelForCell(at: indexPath.row)
+            cell.viewModel = viewModel.dataSource.data.value[indexPath.row]
             return cell
         } else {
             return UICollectionViewCell()
